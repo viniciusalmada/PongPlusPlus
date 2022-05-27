@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include "game_window.hpp"
+
 int main(){
-  std::cout << "Hello, Pong++" << std::endl;
+  GameWindow window{};
+  window.Show();
 }
