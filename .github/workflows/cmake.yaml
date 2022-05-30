@@ -15,7 +15,7 @@ jobs:
         with:
           lfs: true
       - name: Install dependencies
-        run: sudo apt install -y libglew-dev cmake
+        run: sudo apt install -y libglew-dev libglfw3 cmake
       - name: Run cmake configure
         run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
       - name: Build release version
