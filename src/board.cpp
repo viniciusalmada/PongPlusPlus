@@ -1,7 +1,10 @@
 #include "board.hpp"
 
+#include "board_const.hpp"
+
 Board::Board()
-    : ball({ WIDTH / 2, HEIGHT / 2 }), player1({ 100, HEIGHT / 2 }),
-      player2({ 100, HEIGHT / 2 })
+    : ball({ BOARD_WIDTH / 2, BOARD_HEIGHT / 2 }),
+      player1({ 100, BOARD_HEIGHT / 2, Player::Side::LEFT }),
+      player2({ 100, BOARD_HEIGHT / 2, Player::Side::RIGHT })
 {
 }
