@@ -19,7 +19,10 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
 ## MAIN EXECUTABLE
 ###############################################################################
 add_executable(PongPlusPlus src/main.cpp
-                            src/game_window.cpp)
+                            src/ball.cpp
+                            src/board.cpp
+                            src/game_window.cpp
+                            src/player.cpp)
 
 target_include_directories(PongPlusPlus PRIVATE vendor include)
 
