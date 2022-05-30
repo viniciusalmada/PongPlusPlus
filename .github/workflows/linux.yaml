@@ -1,0 +1,22 @@
+name: Linux build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Install dependencies
+        run: sudo apt install -y libglew-dev libglfw3-dev cmake
+      - name: Run cmake configure
+        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+      - name: Build release version
+        run: cmake --build build
