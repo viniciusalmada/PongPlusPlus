@@ -30,7 +30,7 @@ if(UNIX)
 target_link_directories(PongPlusPlus 
   PRIVATE "${PROJECT_SOURCE_DIR}/lib/linux/GraRen/"
   PRIVATE "${PROJECT_SOURCE_DIR}/lib/linux/GL3H/")
-target_link_libraries(PongPlusPlus -lglfw3 -lGLEW -lGraRen -lGL3H -lGL)
+target_link_libraries(PongPlusPlus -lGraRen -lGL3H -lglfw -lGLEW -lGL)
 elseif(WIN32)
 target_link_libraries(PongPlusPlus 
   ${PROJECT_SOURCE_DIR}/lib/win/GLFW/glfw3dll.lib 
