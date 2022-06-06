@@ -3,12 +3,14 @@
 #include "game_window.hpp"
 #include "board.hpp"
 
-class GameApp
+class GameApp : private GameWindowListener
 {
 public:
   GameApp();
 
 private:
+  void OnWindowRender() const override;
+
   GameWindow window;
   
   Board board;

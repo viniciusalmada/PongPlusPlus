@@ -7,7 +7,7 @@
 class GameWindowListener
 {
 public:
-  virtual void OnRender() const = 0;
+  virtual void OnWindowRender() const = 0;
 };
 
 class GameWindow
