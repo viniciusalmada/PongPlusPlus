@@ -18,5 +18,5 @@ GraRen::Rectangle Player::GetDrawable() const
   GraRen::Number y_bot_left = position - size / 2;
   GraRen::Point bot_left{ x_bot_left, y_bot_left };
 
-  return GraRen::Rectangle{ bot_left, 20, size };
+  return GraRen::Rectangle{ bot_left, 20, size, GraRen::Color::BLUE };
 };
