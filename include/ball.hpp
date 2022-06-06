@@ -9,7 +9,7 @@ class Ball : public IDrawable
 public:
   Ball(GraRen::Point position);
 
-  GraRen::IElement GetDrawable() const override;
+  GraRen::Rectangle GetDrawable() const override;
 
 private:
   GraRen::Point position;

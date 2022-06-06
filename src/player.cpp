@@ -7,7 +7,7 @@ Player::Player(int size, int position, Side side)
 {
 }
 
-GraRen::IElement Player::GetDrawable() const
+GraRen::Rectangle Player::GetDrawable() const
 {
   GraRen::Number x_bot_left;
   if (side == Side::LEFT)
@@ -18,7 +18,5 @@ GraRen::IElement Player::GetDrawable() const
   GraRen::Number y_bot_left = position - size / 2;
   GraRen::Point bot_left{ x_bot_left, y_bot_left };
 
-  GraRen::Rectangle rect{ bot_left, 20, size };
-
-  return static_cast<GraRen::IElement>(rect);
+  return GraRen::Rectangle{ bot_left, 20, size };
 };

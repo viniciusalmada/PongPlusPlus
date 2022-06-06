@@ -9,7 +9,7 @@ public:
 
   Player(int size, int position, Side side);
 
-  GraRen::IElement GetDrawable() const override;
+  GraRen::Rectangle GetDrawable() const override;
 
 private:
   int size;
