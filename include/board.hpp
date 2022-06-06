@@ -10,6 +10,8 @@ class Board
 public:
   Board();
 
+  void Render() const;
+
 private:
   Ball ball;
   Player player1;

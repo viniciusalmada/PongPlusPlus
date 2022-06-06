@@ -12,7 +12,11 @@ Board::Board()
   GraRen::Rectangle player2_rect = player2.GetDrawable();
   GraRen::Rectangle ball_rect = ball.GetDrawable();
 
-  std::vector<GraRen::IElement*> elems{&player1_rect, &player2_rect, &ball_rect};
-  
+  std::vector<GraRen::IElement*> elems{ &player1_rect,
+                                        &player2_rect,
+                                        &ball_rect };
+
   canvas.UpdateData(elems);
 }
+
+void Board::Render() const { canvas.Render(); }
