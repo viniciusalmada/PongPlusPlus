@@ -1,8 +1,7 @@
 #include <iostream>
 
-#include "game_window.hpp"
+#include "game_app.hpp"
 
 int main(){
-  GameWindow window{};
-  window.Show();
+  GameApp app{};
 }
