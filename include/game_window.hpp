@@ -4,12 +4,20 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
+class GameWindowListener
+{
+public:
+  virtual void OnRender() const = 0;
+};
+
 class GameWindow
 {
 public:
   GameWindow();
 
   void Show() const;
+
+  void SetListener(GameWindowListener* listener);
 
 private:
   static constexpr int WIDTH = 640;
@@ -21,4 +29,6 @@ private:
   void InitGLEW() const;
 
   GLFWwindow* window;
+
+  GameWindowListener* listener;
 };

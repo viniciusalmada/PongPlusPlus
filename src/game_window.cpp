@@ -4,7 +4,10 @@
 
 const std::string GameWindow::TITLE = "Pong++";
 
-GameWindow::GameWindow() : window(InitWindow()) { InitGLEW(); }
+GameWindow::GameWindow() : window(InitWindow()), listener(nullptr)
+{
+  InitGLEW();
+}
 
 GLFWwindow* GameWindow::InitWindow() const
 {
@@ -39,8 +42,16 @@ void GameWindow::Show() const
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
+    if (listener != nullptr)
+    {
+      listener->OnRender();
+    }
     glfwSwapBuffers(window);
 
     glfwPollEvents();
   } while (!glfwWindowShouldClose(window));
+}
+
+void GameWindow::SetListener(GameWindowListener* new_listener){
+  this->listener = new_listener;
 }
