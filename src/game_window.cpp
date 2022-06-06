@@ -44,7 +44,7 @@ void GameWindow::Show() const
 
     if (listener != nullptr)
     {
-      listener->OnRender();
+      listener->OnWindowRender();
     }
     glfwSwapBuffers(window);
 

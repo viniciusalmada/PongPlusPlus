@@ -8,6 +8,8 @@ class GameApp : private GameWindowListener
 public:
   GameApp();
 
+  void Start() const;
+
 private:
   void OnWindowRender() const override;
 

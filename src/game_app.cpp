@@ -3,7 +3,8 @@
 GameApp::GameApp() : window(), board()
 {
   window.SetListener(this);
-  window.Show();
 };
+
+void GameApp::Start() const { window.Show(); }
 
 void GameApp::OnWindowRender() const { board.Render(); };

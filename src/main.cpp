@@ -4,4 +4,5 @@
 
 int main(){
   GameApp app{};
+  app.Start();
 }
