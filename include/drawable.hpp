@@ -5,5 +5,5 @@
 class IDrawable
 {
 public:
-  virtual GraRen::Rectangle GetDrawable() const = 0;
+  virtual GraRen::IElement GetDrawable() const = 0;
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "idrawable.hpp"
+#include "drawable.hpp"
 
 #include <GraRen/point.hpp>
 
@@ -9,7 +9,7 @@ class Ball : public IDrawable
 public:
   Ball(GraRen::Point position);
 
-  GraRen::Rectangle GetDrawable() const override;
+  GraRen::IElement GetDrawable() const override;
 
 private:
   GraRen::Point position;

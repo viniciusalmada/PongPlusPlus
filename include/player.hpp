@@ -1,6 +1,6 @@
 #pragma once
 
-#include "idrawable.hpp"
+#include "drawable.hpp"
 
 class Player : public IDrawable
 {
@@ -9,7 +9,7 @@ public:
 
   Player(int size, int position, Side side);
 
-  GraRen::Rectangle GetDrawable() const override;
+  GraRen::IElement GetDrawable() const override;
 
 private:
   int size;
