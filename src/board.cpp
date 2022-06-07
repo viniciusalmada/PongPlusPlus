@@ -10,7 +10,7 @@ Board::Board()
 {
   GraRen::Rectangle player1_rect = player1.GetDrawable();
   GraRen::Rectangle player2_rect = player2.GetDrawable();
-  GraRen::Rectangle ball_rect = ball.GetDrawable();
+  GraRen::Circle ball_rect = ball.GetDrawable();
 
   std::vector<GraRen::IElement*> elems{ &player1_rect,
                                         &player2_rect,

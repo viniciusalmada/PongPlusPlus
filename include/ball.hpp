@@ -1,15 +1,14 @@
 #pragma once
 
-#include "drawable.hpp"
-
+#include <GraRen/circle.hpp>
 #include <GraRen/point.hpp>
 
-class Ball : public IDrawable
+class Ball
 {
 public:
   Ball(GraRen::Point position);
 
-  GraRen::Rectangle GetDrawable() const override;
+  GraRen::Circle GetDrawable() const;
 
 private:
   GraRen::Point position;

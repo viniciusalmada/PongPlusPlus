@@ -1,15 +1,15 @@
 #pragma once
 
-#include "drawable.hpp"
+#include <GraRen/rectangle.hpp>
 
-class Player : public IDrawable
+class Player
 {
 public:
   enum class Side { LEFT, RIGHT };
 
   Player(int size, int position, Side side);
 
-  GraRen::Rectangle GetDrawable() const override;
+  GraRen::Rectangle GetDrawable() const;
 
 private:
   int size;

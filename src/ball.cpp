@@ -2,9 +2,9 @@
 
 Ball::Ball(GraRen::Point position) : position(position) {}
 
-GraRen::Rectangle Ball::GetDrawable() const
+GraRen::Circle Ball::GetDrawable() const
 {
-  GraRen::Point bot_left = position - GraRen::Point{ 20 / 2, 20 / 2 };
+  GraRen::Point center = position;
 
-  return GraRen::Rectangle{ bot_left, 20, 20, GraRen::Color::RED };
+  return GraRen::Circle{ center, 15, GraRen::Color::RED };
 }
