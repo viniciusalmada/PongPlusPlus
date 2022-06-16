@@ -11,6 +11,12 @@ public:
 
   GraRen::Rectangle GetDrawable() const;
 
+  int GetPosition() const { return position; };
+
+  void IncrementPosition();
+
+  void DecrementPosition();
+
 private:
   int size;
   int position;

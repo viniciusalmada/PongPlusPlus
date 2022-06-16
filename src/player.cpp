@@ -20,3 +20,7 @@ GraRen::Rectangle Player::GetDrawable() const
 
   return GraRen::Rectangle{ bot_left, 20, size, GraRen::Color::BLUE };
 };
+
+void Player::IncrementPosition() { position += PLAYER_MOVE_STEP; }
+
+void Player::DecrementPosition() { position -= PLAYER_MOVE_STEP; }
