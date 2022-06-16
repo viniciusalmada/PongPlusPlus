@@ -7,6 +7,8 @@ const std::string GameWindow::TITLE = "Pong++";
 GameWindow::GameWindow() : window(InitWindow()), listener(nullptr)
 {
   InitGLEW();
+
+  glfwSetWindowUserPointer(window, this);
 }
 
 GLFWwindow* GameWindow::InitWindow() const
@@ -18,7 +20,10 @@ GLFWwindow* GameWindow::InitWindow() const
 
   GLFWwindow* win =
     glfwCreateWindow(WIDTH, HEIGHT, TITLE.c_str(), nullptr, nullptr);
+
   glfwSetWindowAttrib(win, GLFW_RESIZABLE, GLFW_FALSE);
+
+  glfwSetKeyCallback(win, OnKeyEventListener);
   return win;
 }
 
@@ -52,6 +57,33 @@ void GameWindow::Show() const
   } while (!glfwWindowShouldClose(window));
 }
 
-void GameWindow::SetListener(GameWindowListener* new_listener){
+void GameWindow::SetListener(GameWindowListener* new_listener)
+{
   this->listener = new_listener;
+}
+
+void GameWindow::OnKeyEventListener(GLFWwindow* window,
+                                    int key,
+                                    int /* scanCode */,
+                                    int action,
+                                    int /* mods */)
+{
+  if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+  {
+    glfwSetWindowShouldClose(window, GLFW_TRUE);
+    return;
+  }
+
+  if (action == GLFW_PRESS || action == GLFW_REPEAT)
+  {
+    GameWindow* self = static_cast<GameWindow*>(glfwGetWindowUserPointer(window));
+    if (key == GLFW_KEY_W){
+      self->listener->OnPlayer1Move(GameWindowListener::Move::UP);
+      return;
+    }
+    if (key == GLFW_KEY_S){
+      self->listener->OnPlayer1Move(GameWindowListener::Move::DOWN);
+      return;
+    }
+  }
 }

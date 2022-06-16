@@ -12,6 +12,8 @@ public:
 
 private:
   void OnWindowRender() const override;
+  
+  void OnPlayer1Move(Move m) override;
 
   GameWindow window;
   

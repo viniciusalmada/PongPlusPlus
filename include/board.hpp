@@ -12,7 +12,13 @@ public:
 
   void Render() const;
 
+  void MovePlayer1(bool toUp);
+  
+  void MovePlayer2(bool toUp);
+
 private:
+  void UpdateBoard();
+
   Ball ball;
   Player player1;
   Player player2;
