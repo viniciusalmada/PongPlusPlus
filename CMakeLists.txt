@@ -68,5 +68,6 @@ if (INCLUDE_PDB STREQUAL YES)
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       $<$<CONFIG:Debug>:"${PROJECT_SOURCE_DIR}/lib/win/GL3H/Debug/GL3H.pdb">
       $<TARGET_FILE_DIR:PongPlusPlus>)
-  endif(UNIX)
 endif()
+
+endif(UNIX)
